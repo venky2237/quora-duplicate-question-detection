@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Quora Duplicate Question Detector</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Quora Duplicate Question Detector</h1>
+
+        <p class="subtitle">
+            Enter two questions to check whether they have the same meaning.
+        </p>
+
+
+        <form method="POST">
+
+            <div class="question-box">
+
+                <label for="question1">
+                    Question 1
+                </label>
+
+                <textarea
+                    id="question1"
+                    name="question1"
+                    placeholder="Enter your first question..."
+                    required>{{ question1 }}</textarea>
+
+            </div>
+
+
+            <div class="question-box">
+
+                <label for="question2">
+                    Question 2
+                </label>
+
+                <textarea
+                    id="question2"
+                    name="question2"
+                    placeholder="Enter your second question..."
+                    required>{{ question2 }}</textarea>
+
+            </div>
+
+
+            <button type="submit">
+                Check Duplicate
+            </button>
+
+        </form>
+
+
+        {% if prediction is not none %}
+
+        <div class="result">
+
+            {% if prediction == 1 %}
+
+                <h2>Duplicate Questions</h2>
+
+                <p>
+                    The model predicts that these questions
+                    have essentially the same meaning.
+                </p>
+
+            {% else %}
+
+                <h2>Not Duplicate</h2>
+
+                <p>
+                    The model predicts that these questions
+                    have different meanings.
+                </p>
+
+            {% endif %}
+
+
+            {% if probability is not none %}
+
+                <p class="probability">
+                    Duplicate probability:
+                    {{ "%.2f"|format(probability * 100) }}%
+                </p>
+
+            {% endif %}
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

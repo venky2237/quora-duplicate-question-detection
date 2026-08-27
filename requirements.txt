@@ -1,0 +1,8 @@
+Flask
+numpy
+scikit-learn
+beautifulsoup4
+nltk
+distance
+fuzzywuzzy
+python-Levenshtein
