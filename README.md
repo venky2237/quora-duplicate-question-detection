@@ -1,20 +1,3 @@
-Absolutely 😄 Here is a **professional README.md** you can directly add to your GitHub repository.
-
-Create a file named:
-
-```text
-README.md
-```
-
-in:
-
-```text
-C:\Users\Admin\Desktop\NLP\quora-flask-app
-```
-
-and paste this:
-
-````markdown
 # Quora Duplicate Question Detection using NLP and Machine Learning
 
 A Natural Language Processing (NLP) and Machine Learning project that predicts whether two Quora questions have the same meaning.
